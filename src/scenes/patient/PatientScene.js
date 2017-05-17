@@ -12,6 +12,8 @@ import LabResults from "./components/LabResults";
 import PatientService from "../../utility/PatientService"
 import Patient from "../../utility/Patient"
 
+import Header from "../../components/Header"
+
 export default class PatientScene extends Component {
     constructor(props){
         super(props);
@@ -36,7 +38,7 @@ export default class PatientScene extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                                <h1>{this.state.name}</h1>
+                                <Header patient={this.state.name}/>
                             </div>
                         </div>
                         <div className="row">
