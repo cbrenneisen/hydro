@@ -1,0 +1,22 @@
+.findings {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 1px;
+  text-align: center;
+  margin: 5px 5px;
+
+   h4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer {
+    width: 100%;
+    display: inline-block;
+    padding: 0 10px;
+
+    button{
+      float: right;
+    }
+  }
+}

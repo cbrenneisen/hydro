@@ -1,0 +1,28 @@
+$width: 100%;
+
+#home-screen {
+
+    width: $width;
+    height: 100%;
+    margin: 0 auto;
+    border-width: 0;
+
+  h1 {
+    height: 300px;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 70px;
+  }
+}
+
+#home-footer {
+  position: fixed;
+  bottom: 100px;
+  width: $width;
+  text-align: center;
+  color: white;
+
+  p {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,17 @@
+$width: 100%;
+
+#patient-screen {
+
+    width: $width;
+    height: 100%;
+    margin: 0 auto;
+    border-width: 0;
+
+  h1 {
+    text-align: center;
+  }
+
+  .findings-row {
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+
+$gradient-color-bottom: #ffffff;
+$gradient-color-top:    #3399ff;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #3399ff;
+  background: -webkit-linear-gradient($gradient-color-bottom, $gradient-color-top);   /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($gradient-color-bottom, $gradient-color-top);        /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($gradient-color-bottom, $gradient-color-top);      /* For Firefox 3.6 to 15 */
+  background: linear-gradient($gradient-color-bottom, $gradient-color-top);           /* Standard syntax */
+}

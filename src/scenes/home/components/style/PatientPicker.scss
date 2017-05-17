@@ -1,0 +1,58 @@
+$border-radius: 5px;
+$picker-width: 400px;
+
+#patient-picker-wrapper {
+    width: 100%;
+
+    input{
+        margin: 0 auto;
+        height: 30px;
+        width: $picker-width;
+    }
+}
+
+#patient-picker {
+
+    margin: 0 auto;
+    width: $picker-width;
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: $border-radius;
+    padding-bottom: 0px;
+    background-color: #ffffff;
+
+    .list-group {
+        margin-bottom: 3em;
+        width: 100%;
+    }
+
+    li {
+        border-bottom: 0;
+        text-align: center;
+
+        &:hover {
+            padding: 15px 23px;
+            background-color: #333;
+            color: #fff;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 90%);
+        width: $picker-width;
+        height: 3em;
+        margin: 0 auto;
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+}
