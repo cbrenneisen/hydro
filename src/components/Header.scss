@@ -1,9 +1,10 @@
 #header{
 
-  background-color: #ffffff;
+  background-color: #1A5276;
+  color: #ffffff;
   width:100%;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 3 0px;
   border-radius: 5px;
     text-align: center;
 
@@ -15,6 +16,11 @@
   a {
     float: left;
     text-decoration: none;
-    color: #3399ff;
+    color: #ffffff;
+
+    .glyphicon {
+      font-size: 20px;
+    }
+
   }
 }

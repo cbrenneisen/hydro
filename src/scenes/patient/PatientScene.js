@@ -11,6 +11,7 @@ import ProblemList from "./components/ProblemList";
 import LabResults from "./components/LabResults";
 import PatientService from "../../utility/PatientService"
 import Patient from "../../utility/Patient"
+import ChiefComplaint from "./components/ChiefComplaint"
 
 import Header from "../../components/Header"
 
@@ -37,7 +38,7 @@ export default class PatientScene extends Component {
             <div id="patient-screen">
                     <div className="container">
                         <div className="row">
-                            <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+                            <div className="col-xs-12">
                                 <Header patient={this.state.name}/>
                             </div>
                         </div>
@@ -49,6 +50,11 @@ export default class PatientScene extends Component {
                                 &nbsp;
                             </div>
                             <div className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
+                                <ChiefComplaint patient={this.state.patient} options={[]}/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-10 col-xs-offset-1">
                                 <FluidAction patient={this.state.patient}/>
                             </div>
                         </div>

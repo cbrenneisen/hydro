@@ -2,6 +2,8 @@ $width: 100%;
 
 #patient-screen {
 
+    font-family: Arial;
+
     width: $width;
     height: 100%;
     margin: 0 auto;
@@ -13,5 +15,11 @@ $width: 100%;
 
   .findings-row {
     padding-top: 20px;
+  }
+
+  .widget {
+
+    background: rgba(248,249,249, .5);
+    color: #1f1f1f;
   }
 }

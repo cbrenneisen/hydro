@@ -52,7 +52,9 @@ export default class HomeScene extends Component {
                 </div>
                 <div id="home-footer">
                     <h4>A Clinical Decision Support System to assist Fluid Resuscitation</h4>
-
+                    <a href="https://github.com/cbrenneisen/hydro">
+                        <h5>Click here for Source Code and Instructions</h5>
+                    </a>
                     <p>&copy; 2017 Carlos Brenneisen</p>
                 </div>
             </div>

@@ -89,7 +89,7 @@ export default class FluidAction extends Component {
         }
 
         return (
-            <div id="fluid-action" className="row">
+            <div id="fluid-action" className="row widget">
                 <h4 className={type}>{message}</h4>
                 {link}
             </div>

@@ -8,10 +8,10 @@ import './style/EHRSummary.css';
 export default class PatientScene extends Component {
     render() {
         return (
-            <div id="ehr-summary" className="row">
+            <div id="ehr-summary" className="row widget">
                 <div className="col-xs-12">
                     <div className="row">
-                        <h5>EHR Summary</h5>
+                        <h4>EHR Summary</h4>
                     </div>
                     <div className="row">
                         <div className="col-xs-12 col-sm-6 col-md-3">

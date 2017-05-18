@@ -111,7 +111,7 @@ export default class FindingsWidget extends Component {
     render() {
 
         return (
-            <div className="findings">
+            <div className="findings widget">
                 <h4>{this.props.header}</h4>
 
                 <ul className="list-group">

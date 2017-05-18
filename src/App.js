@@ -18,7 +18,7 @@ class App extends Component {
         <Router>
             <Switch>
                 <Route path="/patient/:patientID" component={PatientScene} />
-                <Route path="/hydro" component={HomeScene} />
+                <Route path="hydro" component={HomeScene} />
                 <Route path="/" component={HomeScene} />
             </Switch>
         </Router>
