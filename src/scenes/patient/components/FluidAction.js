@@ -77,7 +77,7 @@ export default class FluidAction extends Component {
         }else if(this.state.shock){
             message = "No Fluid Maintenance Recommended Due to Shock";
             type = "warning"
-        }else if(this.state.resuscitation){
+        }else if(this.state.traumatic_resuscitation){
             message = "No Fluid Maintenance Recommended Due to Traumatic Resuscitation";
             type = "warning"
         }else if (this.state.keystones) {

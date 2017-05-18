@@ -10,7 +10,7 @@ export default class FluidAction extends Component {
         super(props);
 
         let options = [ {value: "NO",    label: "None"},
-                        {value: "Shock", label: "Shock"},
+                        {value: "SHOCK", label: "Shock"},
                         {value: "TRAUMATIC_BRAIN", label: "Traumatic Brain Damage"},
                         {value: "TRAUMATIC_RESUSCITATION", label: "Traumatic Resuscitation"}];
 
@@ -19,7 +19,15 @@ export default class FluidAction extends Component {
             question: this.props.question,
         };
     }
-    updateQuestion(event) {
+    updateQuestion(event)
+    {
+        this.props.patient.removeAnswer(this.state.question);
+
+        this.state = {
+            question: event.target.value
+        };
+
+        this.props.patient.update(event.target.value, "YES");
 
     }
     render(){
