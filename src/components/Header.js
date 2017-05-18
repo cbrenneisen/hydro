@@ -10,7 +10,7 @@ const Header = (props) => {
   const {patient} = props;
   return (
     <div id="header">
-        <Link to="/">
+        <Link to="/hydro">
         <button type="button" className="btn btn-default btn-md">
             <span className="glyphicon glyphicon-home" aria-hidden="true"></span>
         </button>
