@@ -9,19 +9,16 @@ $break-small: 450px;
     border-width: 0;
 
   h1 {
-    //desktop
     height: 300px;
     text-align: center;
     padding-top: 100px;
     font-size: 70px;
-  }
 
-  h2 {
-    //mobile
-    height: 150px;
-    text-align: center;
-    padding-top: 50px;
-    font-size: 50px;
+      @media screen and (max-width: $break-small) {
+        height: 150px;
+        padding-top: 50px;
+        font-size: 50px;
+      }
   }
 }
 
