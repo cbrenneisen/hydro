@@ -2,7 +2,7 @@
 
 ## Hydro
 
-See it running by clicking <a href="https://cbrenneisen.github.io/hydro"> right here </a>
+See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
 
 
 This is a web app that is used to aid healthcare professionals when dealing with patients who might need fluid resuscitation. 
