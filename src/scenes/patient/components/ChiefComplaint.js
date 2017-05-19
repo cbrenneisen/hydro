@@ -10,6 +10,9 @@ export default class FluidAction extends Component {
         super(props);
 
         let options = [ {value: "NO",    label: "None"},
+                        {value: "ABPAIN", label: "Abdominal Pain"},
+                        {value: "COUGH", label: "Cough & Chest Pain"},
+                        {value: "HEADACHE", label: "Headache"},
                         {value: "SHOCK", label: "Shock"},
                         {value: "TRAUMATIC_BRAIN", label: "Traumatic Brain Damage"},
                         {value: "TRAUMATIC_RESUSCITATION", label: "Traumatic Resuscitation"}];

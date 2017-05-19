@@ -3,6 +3,9 @@ $border-radius: 5px;
 $picker-width: 400px;
 $break-small: 450px;
 
+//TODO: use this instead
+$mobile: "screen and (max-width: 450px)";
+
 #patient-picker-wrapper {
     width: 100%;
 
