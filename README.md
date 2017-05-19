@@ -5,6 +5,7 @@
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
 
 
+## What? 
 This is a web app that is used to aid healthcare professionals when dealing with patients who might need fluid resuscitation. 
 It works by generating a score based on the patient's current EHR, lab results, and other metrics. 
 
@@ -40,8 +41,8 @@ If the patient has gone through traumatic resuscitation
 Lastly, if the patient is diabetic, we may recommend DKA Protocol and insulin gtt. 
 
 
-## Why this app? 
-Because I originally made a wonky jQuery app for this when doing courses in Biomedical Informatics. I thought I would revisit the problem using modern web technologies. 
+## Why? 
+Because I originally made a wonky jQuery app for this when doing courses in Biomedical Informatics. I thought I would revisit the problem using modern web technologies in order to build a nice and easy to use application. 
 
 ## How? 
 
