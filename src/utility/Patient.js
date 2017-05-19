@@ -83,6 +83,9 @@ export default class Patient {
     resolve(question, answer){
         switch (question){
 
+            default:
+                break;
+
             case "SBP":
                 this.sbp = answer;
                 break;

@@ -41,7 +41,8 @@ export default class HomeScene extends Component {
                 <div className="container">
                     <div className="row">
                         <div id="home-title" className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                            <h1>HydrO</h1>
+                            <h1 className="hidden-xs"> HydrO</h1>
+                            <h2 className="visible-xs">HydrO</h2>
                         </div>
                     </div>
                     <div className="row">
