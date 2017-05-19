@@ -1,5 +1,5 @@
 
-<img width="50px" src="/public/logo.png"> HydrO - A Clinical Decision Support System to assist Fluid Resuscitation 
+<img width="50px" src="/public/logo.png"> HydrO - A CDS System to assist Fluid Resuscitation 
 ======================================
 
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
