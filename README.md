@@ -45,7 +45,7 @@ Because I originally made a wonky jQuery app for this when doing courses in Biom
 
 ## How? 
 
-React is the main portion. Everything is broken down into the smalles viable component. 
+React is the main portion. Everything is broken down into the smallest viable component. 
 
 There's React Router for the different pages.
 
