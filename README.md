@@ -2,10 +2,6 @@
 
 ## Hydro
 
-<p align="center">
-  <img height="160" src="public/logo.png" />
-</p>
-
 See it running at: https://cbrenneisen.github.io/hydro
 
 
