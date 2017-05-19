@@ -1,5 +1,5 @@
 
-<img width="200px" src="/public/logo.png"> Hydro
+<img width="100px" src="/public/logo.png"> Hydro
 ======================================
 
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
