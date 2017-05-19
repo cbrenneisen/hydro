@@ -27,6 +27,7 @@ export default class FindingsEntry extends Component {
         });
         this.props.patient.update(this.state.question, event.target.value);
     }
+
     updateQuestion(event){
         this.setState ({
             answer: ""
@@ -34,7 +35,6 @@ export default class FindingsEntry extends Component {
         this.updateAnswerView(event.target.value, true);
     }
     updateAnswerView(value, submit){
-
         //find the corresponding type
         var type = null;
         for (var i = 0; i< this.props.options.length; i++) {
@@ -48,6 +48,8 @@ export default class FindingsEntry extends Component {
         if (type === "Bool" && submit){
             this.props.patient.update(value, "YES");
         }
+        alert(value)
+
 
         //update both the answer and the question
         this.setState ({

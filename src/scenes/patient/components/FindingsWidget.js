@@ -42,7 +42,7 @@ export default class FindingsWidget extends Component {
             options = [ {label: "Urinary Tract Infection", value: "UTI", type: "Bool"},
                         {label: "Bipolar Disorder", value: "BIPOLAR", type: "Bool"},
                         {label: "HyperTension", value: "HYPERTENSION", type: "Bool"},
-                        {label: "Diabetes Type II", value: "DIABETES_II", type: "Bool"},
+                        {label: "Diabetes Type II", value: "DIABETIC", type: "Bool"},
                         {label: "Spontaneous bacterial peritonitis", value: "SBP", type: "Bool"}];
 
             FindingsService.problem_list(this.props.mrn).forEach(function(element) {

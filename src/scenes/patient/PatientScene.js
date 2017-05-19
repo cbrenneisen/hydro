@@ -49,12 +49,12 @@ export default class PatientScene extends Component {
                             <div className="visible-xs visible-sm col-xs-12">
                                 &nbsp;
                             </div>
-                            <div className="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
+                            <div className="col-xs-10 col-xs-offset-1 col-md-3 col-md-offset-1">
                                 <ChiefComplaint patient={this.state.patient} options={[]}/>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-xs-10 col-xs-offset-1">
+                            <div className="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
                                 <FluidAction patient={this.state.patient}/>
                             </div>
                         </div>

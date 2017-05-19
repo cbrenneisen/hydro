@@ -16,7 +16,8 @@ export default class FluidAction extends Component {
             brain: false,
             resuscitation: false,
             shock: false,
-            keystones: false
+            keystones: false,
+            diabetic: false
         };
     }
     componentWillMount(){
@@ -61,6 +62,12 @@ export default class FluidAction extends Component {
                 keystones: x
             });
         });
+
+        this.props.patient.diabetic.subscribe((x) => {
+            this.setState ({
+                diabetic: x
+            });
+        });
     }
     render() {
 
@@ -77,10 +84,10 @@ export default class FluidAction extends Component {
         }else if(this.state.shock){
             message = "No Fluid Maintenance Recommended Due to Shock";
             type = "warning"
-        }else if(this.state.resuscitation){
+        }else if(this.state.traumatic_resuscitation){
             message = "No Fluid Maintenance Recommended Due to Traumatic Resuscitation";
             type = "warning"
-        }else if (this.state.keystones) {
+        }else if (this.state.diabetic) {
             message = "Consider DKA Protocol and insulin gtt with fluid replacement for dehydration"
         }else if (this.state.score >= 5) {
             message = "Low fluid volume. Consider Fluid Resuscitation"

@@ -18,7 +18,6 @@ export default class Patient {
 	age = null;
 
 	mrn = "";
-	chief_complaint = "";
 	name = "";
 
 	burn = new Rx.BehaviorSubject(false);
@@ -26,6 +25,7 @@ export default class Patient {
     shock = new Rx.BehaviorSubject(false);
     traumatic_resuscitation = new Rx.BehaviorSubject(false);
     keystones = new Rx.BehaviorSubject(false);
+    diabetic = new Rx.BehaviorSubject(false);
 	npo = new Rx.BehaviorSubject(false);
 
 	//score modifiers
@@ -82,6 +82,9 @@ export default class Patient {
 
     resolve(question, answer){
         switch (question){
+
+            default:
+                break;
 
             case "SBP":
                 this.sbp = answer;
@@ -174,6 +177,14 @@ export default class Patient {
                     this.keystones.next(false)
                 }
                 break;
+
+            case "DIABETIC":
+                if (answer === "YES") {
+                    this.diabetic.next(true)
+                }else{
+                    this.diabetic.next(false)
+                }
+                break;
         }
     }
 
@@ -182,7 +193,6 @@ export default class Patient {
         var score = 0;
         if (this.sbp !== -1)
         {
-
             if (this.sbp < 90)
             {
                 score += 3;

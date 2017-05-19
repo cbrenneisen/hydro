@@ -1,5 +1,10 @@
 $border-radius: 5px;
+
 $picker-width: 400px;
+$break-small: 450px;
+
+//TODO: use this instead
+$mobile: "screen and (max-width: 450px)";
 
 #patient-picker-wrapper {
     width: 100%;
@@ -8,18 +13,26 @@ $picker-width: 400px;
         margin: 0 auto;
         height: 30px;
         width: $picker-width;
+        @media screen and (max-width: $break-small){
+            width: 100%;
+        }
     }
 }
 
 #patient-picker {
 
     margin: 0 auto;
-    width: $picker-width;
     max-height: 200px;
     overflow-y: scroll;
     border-radius: $border-radius;
     padding-bottom: 0px;
     background-color: #ffffff;
+
+    width: $picker-width;
+    @media screen and (max-width: $break-small){
+        width: 100%;
+    }
+
 
     .list-group {
         margin-bottom: 3em;
@@ -49,10 +62,14 @@ $picker-width: 400px;
         bottom: 0;
         pointer-events: none;
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 90%);
-        width: $picker-width;
         height: 3em;
         margin: 0 auto;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
+
+        width: $picker-width;
+        @media screen and (max-width: $break-small){
+            width: 0; //TODO: see if we can still show this in mobile
+        }
     }
 }
