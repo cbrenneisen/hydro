@@ -2,6 +2,9 @@
 
 ## Hydro
 
+
+<img src="/public/logo.png">
+
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
 
 
