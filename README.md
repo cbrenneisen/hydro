@@ -45,8 +45,14 @@ Because I originally made a wonky jQuery app for this when doing courses in Biom
 
 ## How? 
 
-Changes to the patient score are retrieved from the FluidAction component using RxJS. The score is changed, and the component updates its state, causing a re-render to display the right message. MobX or Redux would have been a viable solution as well, but for a smaller app, the sequence pattern used in Rx was much more appropriate. 
+React is the main portion. Everything is broken down into the smalles viable component. 
 
+There's React Router for the different pages.
+
+There's SASS for the styling (converted to CSS on run). Every component gets their own stylesheet, to help encapsulate the styling and avoid rampant namespace issues. 
+
+And lastly, RxJS for alerting the appropriate components when there's new data to be used. 
+Changes to the patient score are retrieved from the FluidAction component using RxJS. The score is changed, and the component updates its state, causing a re-render to display the right message. MobX or Redux would have been a viable solution as well, but for a smaller app, the sequence pattern of Rx was much more appropriate. 
 
 ## Setup
 
