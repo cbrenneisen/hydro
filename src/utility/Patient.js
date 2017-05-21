@@ -40,10 +40,13 @@ export default class Patient {
 	urine_output = -1;
 	bs = -1;
 
+	problems = [];
+    vitals = [];
+    lab_results = [];
+
     constructor(mrn){
         this.mrn = mrn;
     }
-
     setup(){
 
         let info = PatientService.patient_info(this.mrn).ehr;
@@ -54,20 +57,19 @@ export default class Patient {
         this.height = info.height;
         this.age = info.age;
 
-        let problems = FindingsService.problem_list(this.mrn);
-        let vitals = FindingsService.vital_signs(this.mrn);
-        let results = FindingsService.lab_results(this.mrn);
+        this.problems = FindingsService.problem_list(this.mrn);
+        this.vitals = FindingsService.vital_signs(this.mrn);
+        this.lab_results = FindingsService.lab_results(this.mrn);
 
-        for (let i = 0; i < problems.length; i ++ ){
-            this.resolve(problems[i].question, problems[i].answer);
+        for (let i = 0; i < this.problems.length; i ++ ){
+            this.resolve(this.problems[i].question, this.problems[i].answer);
         }
-        for (let i = 0; i < vitals.length; i ++ ){
-            this.resolve(vitals[i].question, vitals[i].answer);
+        for (let i = 0; i < this.vitals.length; i ++ ){
+            this.resolve(this.vitals[i].question, this.vitals[i].answer);
         }
-        for (let i = 0; i < results.length; i ++ ){
-            this.resolve(results[i].question, results[i].answer);
+        for (let i = 0; i < this.lab_results.length; i ++ ){
+            this.resolve(this.lab_results[i].question, this.lab_results[i].answer);
         }
-
         this.setScore();
     }
     update(question, answer){
@@ -187,7 +189,6 @@ export default class Patient {
                 break;
         }
     }
-
     setScore(){
 
         var score = 0;

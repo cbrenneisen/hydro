@@ -15,10 +15,10 @@
     "gh-pages": "^1.0.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "1.0.0"
   },
   "scripts": {
-    "deploy" : "npm run build&&gh-pages -d build",
+    "deploy": "npm run build&&gh-pages -d build",
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",

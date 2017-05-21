@@ -36,41 +36,41 @@ export default class PatientScene extends Component {
 
         return (
             <div id="patient-screen">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xs-12">
-                                <Header patient={this.state.name}/>
-                            </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12">
+                            <Header patient={this.state.name}/>
                         </div>
-                        <div className="row">
-                            <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0">
-                                <EHRSummary patient={this.state.patient} />
-                            </div>
-                            <div className="visible-xs visible-sm col-xs-12">
-                                &nbsp;
-                            </div>
-                            <div className="col-xs-10 col-xs-offset-1 col-md-3 col-md-offset-1">
-                                <ChiefComplaint patient={this.state.patient} options={[]}/>
-                            </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0">
+                            <EHRSummary patient={this.state.patient} />
                         </div>
-                        <div className="row">
-                            <div className="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
-                                <FluidAction patient={this.state.patient}/>
-                            </div>
+                        <div className="visible-xs visible-sm col-xs-12">
+                            &nbsp;
                         </div>
-                        <div className="row findings-row">
-                            <div className="col-xs-12 col-md-6">
-                                <VitalSigns mrn={this.props.match.params.patientID} patient={this.state.patient}/>
-                            </div>
-                            <div className="col-xs-12 col-md-6">
-                                <LabResults mrn={this.props.match.params.patientID} patient={this.props.patient}/>
-                            </div>
-                            <div className="col-xs-12 col-md-6">
-                                <ProblemList mrn={this.props.match.params.patientID} patient={this.props.patient}/>
-                            </div>
+                        <div className="col-xs-10 col-xs-offset-1 col-md-3 col-md-offset-1">
+                            <ChiefComplaint patient={this.state.patient} options={[]}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+                            <FluidAction patient={this.state.patient}/>
+                        </div>
+                    </div>
+                    <div className="row findings-row">
+                        <div className="col-xs-12 col-md-6">
+                            <VitalSigns mrn={this.props.match.params.patientID} patient={this.state.patient}/>
+                        </div>
+                        <div className="col-xs-12 col-md-6">
+                            <LabResults mrn={this.props.match.params.patientID} patient={this.state.patient}/>
+                        </div>
+                        <div className="col-xs-12 col-md-6">
+                            <ProblemList mrn={this.props.match.params.patientID} patient={this.state.patient}/>
                         </div>
                     </div>
                 </div>
+            </div>
         );
-  }
+    }
 }

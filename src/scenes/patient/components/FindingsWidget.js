@@ -25,68 +25,25 @@ export default class FindingsWidget extends Component {
         }
 
         this.state = {
-            entries: [],
-            options: [],
+            entries: this.props.entries,
+            options: this.props.options,
             type: type,
-            endpoint: endpoint
+            endpoint: endpoint,
+            entries: []
         }
     }
     componentWillMount() {
         //get data here
         //TODO: switch this to a network call
 
-        var options = [];
-        var entries = [];
-        if (this.state.endpoint === "problems") {
-
-            options = [ {label: "Urinary Tract Infection", value: "UTI", type: "Bool"},
-                        {label: "Bipolar Disorder", value: "BIPOLAR", type: "Bool"},
-                        {label: "HyperTension", value: "HYPERTENSION", type: "Bool"},
-                        {label: "Diabetes Type II", value: "DIABETIC", type: "Bool"},
-                        {label: "Spontaneous bacterial peritonitis", value: "SBP", type: "Bool"}];
-
-            FindingsService.problem_list(this.props.mrn).forEach(function(element) {
+        let entries = [];
+        if (this.props.entries !== undefined) {
+            this.props.entries.forEach(function (element) {
                 entries.push({id: ++id, question: element.question, answer: element.answer})
             });
-
-        }else if (this.state.endpoint === "vital"){
-
-            options = [ {label: "Temperature", value: "TEMP", type: "Number"},
-                        {label: "Respiratory Rate", value: "RESP_RATE", type: "Number"},
-                        {label: "Pulse", value: "PULSE", type: "Number"},
-                        {label: "Pulse Ox", value: "PULSE_OX", type: "Number"},
-                        {label: "Altered Location", value: "ALTERED_LOC", type: "Bool"},
-                        {label: "Systolic Blood Pressure", value: "SBP", type: "Number"},
-                        {label: "Diastolic Blood Pressure", value: "DBP", type: "Number"},
-                        {label: "Capillary Refill", value: "CAPILLARY_REFILL", type: "Number"},
-                        {label: "Urine Output", value: "URINE_OUTPUT", type: "Number"},
-                        {label: "Oxygen Required", value: "O2_REQUIREMENT", type: "Number"},
-                        {label: "NPO", value: "NPO", type: "Bool"},
-                        {label: "Renal/Hepatic Insufficiencies", value: "RHI", type: "Bool"}];
-
-            FindingsService.vital_signs(this.props.mrn).forEach(function(element) {
-                entries.push({id: ++id, question: element.question, answer: element.answer})
-            });
-
-        }else if (this.state.endpoint === "lab") {
-
-            options = [ {label: "White Blood Cell Count", value: "WBC", type: "Number"},
-                        {label: "Potassium", value: "K", type: "Number"},
-                        {label: "Sodium", value: "Na", type: "Number"},
-                        {label: "Glucose", value: "GLUCOSE", type: "Number"},
-                        {label: "Creatinine", value: "CREATININE", type: "Number"}];
-
-            FindingsService.lab_results(this.props.mrn).forEach(function(element) {
-                entries.push({id: ++id, question: element.question, answer: element.answer})
-            });
-        }
-
-        for (var i = 0; i < entries.length; i++){
-            entries.id = ++id;
         }
 
         this.setState ({
-            options: options,
             entries: entries
         })
     }
