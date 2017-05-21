@@ -5,36 +5,19 @@
 import React, { Component } from 'react';
 import './style/FindingsWidget.css';
 import FindingsEntry from "./FindingsEntry"
-import FindingsService from '../../../utility/FindingsService'
 
 let id = 0;
 export default class FindingsWidget extends Component {
     constructor(props) {
         super(props);
 
-        //defaults
-        var type = "Findings";
-        var endpoint = "problems";
-
-        //props
-        if (this.props.type !== undefined){
-            type = this.props.type
-        }
-        if (this.props.endpoint !== undefined){
-            endpoint = this.props.endpoint
-        }
-
         this.state = {
-            entries: this.props.entries,
-            options: this.props.options,
-            type: type,
-            endpoint: endpoint,
+            options: [],
             entries: []
         }
     }
     componentWillMount() {
         //get data here
-        //TODO: switch this to a network call
 
         let entries = [];
         if (this.props.entries !== undefined) {
@@ -43,22 +26,31 @@ export default class FindingsWidget extends Component {
             });
         }
 
+        let options = [];
+        let optID = 0;
+        if (this.props.options !== undefined) {
+            this.props.options.forEach(function (option) {
+                options.push({id: ++optID, label: option.label, value: option.value, type: option.type})
+            });
+        }
+
         this.setState ({
-            entries: entries
+            entries: entries,
+            options: options
         })
     }
     addFinding(){
 
-        var entries = this.state.entries;
+        let entries = this.state.entries;
         entries.push({id: ++id, answer: "", question: ""});
 
         this.setState ({
             entries: entries
         })
     }
-    removeFinding(input, event){
+    removeFinding(input){
 
-        var entries = input.parent.state.entries;
+        let entries = input.parent.state.entries;
         entries.splice(input.index, 1);
 
         input.parent.setState ({
@@ -80,18 +72,16 @@ export default class FindingsWidget extends Component {
                                         question={entry.question}
                                         onDelete={this.removeFinding.bind(null, {index: index, parent: this})}
                                         patient={this.props.patient}
-                                        options={this.state.options}
-                                        typeTest={this.state.type}/>
+                                        options={this.state.options} />
                       })}
                 </ul>
                 <div className="footer">
                     <button type="button" onClick={this.addFinding.bind(this)}
                             className="btn btn-default btn-xs" aria-label="Left Align">
-                        <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        <span className="glyphicon glyphicon-plus" aria-hidden="true"/>
                     </button>
                 </div>
             </div>
         )
-
     }
 }

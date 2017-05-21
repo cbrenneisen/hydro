@@ -16,10 +16,10 @@ export default class PatientPicker extends Component {
         }
     }
     search(event){
-        var keyword = event.target.value;
+        let keyword = event.target.value;
 
         //filter out of the original list of patients
-        var newPatients = this.props.patients.filter(function(patient){
+        let newPatients = this.props.patients.filter(function(patient){
             return patient.name.toLowerCase().includes(keyword.toLowerCase())
         });
 
@@ -37,7 +37,7 @@ export default class PatientPicker extends Component {
               <div id="patient-picker">
                   <ul className="list-group">
                       {this.state.patients.map((patient) => {
-                        return <PatientRow patient={patient}/>
+                        return <PatientRow patient={patient} key={patient.mrn}/>
                       })}
                   </ul>
               </div>

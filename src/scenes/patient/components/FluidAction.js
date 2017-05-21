@@ -20,6 +20,16 @@ export default class FluidAction extends Component {
             diabetic: false
         };
     }
+    componentWillUnmount(){
+        this.props.patient.score.unsubscribe();
+        this.props.patient.npo.unsubscribe();
+        this.props.patient.burn.unsubscribe();
+        this.props.patient.traumatic_brain.unsubscribe();
+        this.props.patient.shock.unsubscribe();
+        this.props.patient.traumatic_resuscitation.unsubscribe();
+        this.props.patient.keystones.unsubscribe();
+        this.props.patient.diabetic.unsubscribe();
+    }
     componentWillMount(){
         this.props.patient.score.subscribe((x) => {
             this.setState ({

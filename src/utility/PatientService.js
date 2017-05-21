@@ -40,4 +40,33 @@ export default class PatientService {
 
         return {name: "", ehr: {}};
     }
+
+    static all_patients(){
+        return [
+            {
+                name: 'Beverly Hazzard',
+                mrn: '2009527'
+            },
+            {
+                name: 'Mary Hernandez',
+                mrn: '2009528'
+            },
+            {
+                name: 'Susan Shade',
+                mrn: '2009529'
+            },
+            {
+                name: 'Mitchell Matthews',
+                mrn: '2009530'
+            },
+            {
+                name: 'Angela Williams',
+                mrn: '2009531'
+            },
+            {
+                name: 'James Gorham',
+                mrn: '2009532'
+            }
+        ];
+    }
 }

@@ -4,38 +4,26 @@
 
 import React, { Component } from 'react';
 import PatientPicker from "./components/PatientPicker";
+import PatientService from "../../utility/PatientService"
 import './HomeScene.css';
 
 export default class HomeScene extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            patients: []
+        };
+    }
+    componentWillMount(){
+
+        let patients = PatientService.all_patients();
+
+        this.setState ({
+            patients: patients
+        })
+    }
     render() {
-
-        const patients = [
-            {
-                'name': 'Beverly Hazzard',
-                'mrn': '2009527'
-            },
-            {
-                'name': 'Mary Hernandez',
-                'mrn': '2009528'
-            },
-            {
-                'name': 'Susan Shade',
-                'mrn': '2009529'
-            },
-            {
-                'name': 'Mitchell Matthews',
-                'mrn': '2009530'
-            },
-            {
-                'name': 'Angela Williams',
-                'mrn': '2009531'
-            },
-            {
-                'name': 'James Gorham',
-                'mrn': '2009532'
-            },
-        ];
-
         return (
             <div id="home-screen">
                 <div className="container">
@@ -46,7 +34,7 @@ export default class HomeScene extends Component {
                     </div>
                     <div className="row">
                         <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                            <PatientPicker patients={patients}/>
+                            <PatientPicker patients={this.state.patients}/>
                         </div>
                     </div>
                 </div>

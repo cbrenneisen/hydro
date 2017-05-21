@@ -9,13 +9,14 @@ export default class FluidAction extends Component {
     constructor(props) {
         super(props);
 
-        let options = [ {value: "NO",    label: "None"},
-                        {value: "ABPAIN", label: "Abdominal Pain"},
-                        {value: "COUGH", label: "Cough & Chest Pain"},
-                        {value: "HEADACHE", label: "Headache"},
-                        {value: "SHOCK", label: "Shock"},
-                        {value: "TRAUMATIC_BRAIN", label: "Traumatic Brain Damage"},
-                        {value: "TRAUMATIC_RESUSCITATION", label: "Traumatic Resuscitation"}];
+        let id = 0;
+        let options = [ {id: ++id, value: "NO",    label: "None"},
+                        {id: ++id, value: "ABPAIN", label: "Abdominal Pain"},
+                        {id: ++id, value: "COUGH", label: "Cough & Chest Pain"},
+                        {id: ++id, value: "HEADACHE", label: "Headache"},
+                        {id: ++id, value: "SHOCK", label: "Shock"},
+                        {id: ++id, value: "TRAUMATIC_BRAIN", label: "Traumatic Brain Damage"},
+                        {id: ++id, value: "TRAUMATIC_RESUSCITATION", label: "Traumatic Resuscitation"}];
 
         this.state = {
             options: options,
@@ -42,7 +43,7 @@ export default class FluidAction extends Component {
                 <select className="form-control"
                         onChange={this.updateQuestion.bind(this)} value={this.state.question}>
                     {this.state.options.map((entry) => {
-                        return <option value={entry.value}>{entry.label}</option>
+                        return <option key={entry.id} value={entry.value}>{entry.label}</option>
                     })}
                 </select>
             </div>

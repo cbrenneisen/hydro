@@ -13,13 +13,11 @@ export default class FindingsEntry extends Component {
             answer: this.props.answer,
             question: this.props.question,
             answerType: null,
+            options: []
         };
     }
     componentWillMount(){
         this.updateAnswerView(this.state.question, false);
-    }
-    componentWillUnmount(){
-        this.props.patient.removeAnswer(this.state.question);
     }
     updateAnswer(event){
         this.setState ({
@@ -35,8 +33,8 @@ export default class FindingsEntry extends Component {
     }
     updateAnswerView(value, submit){
         //find the corresponding type
-        var type = null;
-        for (var i = 0; i< this.props.options.length; i++) {
+        let type = null;
+        for (let i = 0; i< this.props.options.length; i++) {
 
             if (this.props.options[i].value === value) {
                 type = this.props.options[i].type;
@@ -54,9 +52,13 @@ export default class FindingsEntry extends Component {
             question: value
         })
     }
+    removeEntry(){
+        this.props.patient.removeAnswer(this.state.question);
+        this.props.onDelete();
+    }
     render() {
 
-        var answerView = null;
+        let answerView = null;
         if (this.state.answerType === "Bool") {
 
             answerView =
@@ -74,8 +76,8 @@ export default class FindingsEntry extends Component {
                 <div className="left">
                     <select className="form-control"
                             onChange={this.updateQuestion.bind(this)} value={this.state.question}>
-                        {this.props.options.map((entry) => {
-                            return <option value={entry.value}>{entry.label}</option>
+                        {this.props.options.map((option) => {
+                            return <option key={option.id} value={option.value}>{option.label}</option>
                         })}
                     </select>
                 </div>
@@ -85,7 +87,7 @@ export default class FindingsEntry extends Component {
                 </div>
                 <div className="trash">
                     <span className="glyphicon glyphicon glyphicon-trash"
-                          aria-hidden="true" onClick={this.props.onDelete}/>
+                          aria-hidden="true" onClick={this.removeEntry.bind(this)}/>
                 </div>
             </li>
         )
