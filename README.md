@@ -1,5 +1,5 @@
 
-<img width="40px" src="/public/logo.png"> HydrO: A CDS to assist Fluid Resuscitation 
+<img width="40px" src="/client/public/logo.png"> HydrO: A CDS to assist Fluid Resuscitation 
 ======================================
 
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
