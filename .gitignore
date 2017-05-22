@@ -2,12 +2,14 @@
 
 # dependencies
 /node_modules
+/client/node_modules
 
 # testing
 /coverage
 
 # production
 /build
+/client/build
 
 # generate css from sass instead
 *.css

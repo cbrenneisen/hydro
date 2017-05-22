@@ -4,25 +4,9 @@
 
 import React, { Component } from 'react';
 import PatientPicker from "./components/PatientPicker";
-import PatientService from "../../utility/PatientService"
 import './HomeScene.css';
 
 export default class HomeScene extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            patients: []
-        };
-    }
-    componentWillMount(){
-
-        let patients = PatientService.all_patients();
-
-        this.setState ({
-            patients: patients
-        })
-    }
     render() {
         return (
             <div id="home-screen">
@@ -34,7 +18,7 @@ export default class HomeScene extends Component {
                     </div>
                     <div className="row">
                         <div className="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                            <PatientPicker patients={this.state.patients}/>
+                            <PatientPicker />
                         </div>
                     </div>
                 </div>

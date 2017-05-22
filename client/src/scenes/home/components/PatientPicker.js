@@ -3,17 +3,30 @@
  */
 
 import React, { Component } from 'react';
+import PatientRow from "./PatientRow";
+import 'whatwg-fetch';
 
 import './style/PatientPicker.css';
-import PatientRow from "./PatientRow";
+
 
 export default class PatientPicker extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            patients: this.props.patients,
+            patients: [],
         }
+    }
+    componentWillMount(){
+        //TODO: use promises
+
+        fetch("api/patients")
+            .then(resp => resp.json())
+            .then(resp => {
+                this.setState({
+                   patients: resp
+                });
+            });
     }
     search(event){
         let keyword = event.target.value;
@@ -26,8 +39,8 @@ export default class PatientPicker extends Component {
         this.setState ({
             patients: newPatients
         })
-    }
-    render() {
+
+    }render() {
 
         return (
             <div id="patient-picker-wrapper">

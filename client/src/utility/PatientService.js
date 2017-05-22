@@ -42,6 +42,7 @@ export default class PatientService {
     }
 
     static all_patients(){
+
         return [
             {
                 name: 'Beverly Hazzard',
