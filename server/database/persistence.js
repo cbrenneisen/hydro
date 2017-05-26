@@ -2,61 +2,58 @@
  * Created by carlos.brenneisen on 5/24/17.
  */
 
+let mongoClient;
+let mongoUrl;
+
+//Collections
+const patientsCol = "patients";
 
 module.exports = function(client, dbUrl) {
 
+    mongoClient = client;
+    mongoUrl = dbUrl;
+
     this.allPatients = function(){
-
-        return new Promise(function(resolve, reject) {
-            client.connect(dbUrl, function(err, db) {
-
-                if (err) {
-                    reject(err);
-                    db.close();
-                    return
-                }
-                let sort = {name: 1};
-
-                db.collection("patients").find({}, {'_id': false}).sort(sort).toArray(function(err, result) {
-                    if (err) {
-                        reject(err);
-                        db.close();
-                        return
-                    }
-                    resolve(result);
-                    db.close();
-                });
-            });
-        });
+        return fetchPatients({}, {'_id': false}, {name: 1})
     };
 
     this.singlePatient = function(mrn){
-        return new Promise(function(resolve, reject) {
-            client.connect(dbUrl, function(err, db) {
 
+        return fetchPatients({ mrn: mrn }, {'_id': false}, {}, true)
+    };
+};
+
+//private functions
+function fetchPatients(query, params, sort, single=false){
+
+    return new Promise(function(resolve, reject) {
+        mongoClient.connect(mongoUrl, function(err, db) {
+
+            if (err) {
+                reject(err);
+                return
+            }
+
+            db.collection(patientsCol).find(query, params).sort(sort).toArray(function(err, result) {
                 if (err) {
                     reject(err);
                     db.close();
                     return
                 }
-                let query = { mrn: mrn };
 
-                db.collection("patients").find(query, {'_id': false}).toArray(function(err, result) {
-                    if (err) {
-                        reject(err);
-                        db.close();
-                        return
-                    }
-
+                if (single){
+                    //return a dictionary, not an array
                     if (result.length > 0) {
-                        resolve(result[0]);
-                    }else{
-                        reject("No such patient");
+                        resolve(result[0])
+                    }else {
+                        reject("No record found");
                     }
-
-                    db.close();
-                });
+                }else {
+                    //return entire array
+                    resolve(result);
+                }
+                db.close();
             });
         });
-    };
-};
+    });
+}

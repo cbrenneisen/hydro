@@ -2,7 +2,6 @@
  * Created by carlos.brenneisen on 5/24/17.
  */
 
-
 module.exports = function(app, persistence) {
 
     const base = "/api/patients";
@@ -26,5 +25,6 @@ module.exports = function(app, persistence) {
                 response.json([]);
             });
     });
+
 
 };

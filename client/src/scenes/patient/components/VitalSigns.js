@@ -21,7 +21,6 @@ export default class VitalSigns extends Component {
                         {label: "Oxygen Required", value: "O2_REQUIREMENT", type: "Number"},
                         {label: "NPO", value: "NPO", type: "Bool"},
                         {label: "Renal/Hepatic Insufficiencies", value: "RHI", type: "Bool"}];
-
         this.state = {
             entries: this.props.patient.vitals,
             options: options
