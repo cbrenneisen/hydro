@@ -7,24 +7,73 @@ let mongoUrl;
 
 //Collections
 const patientsCol = "patients";
+const findingsCol = "findings";
+const complaintsCol = "complaints";
 
 module.exports = function(client, dbUrl) {
 
     mongoClient = client;
     mongoUrl = dbUrl;
 
+    //patients
     this.allPatients = function(){
-        return fetchPatients({}, {'_id': false}, {name: 1})
+        //return partial info
+        return fetchData(patientsCol, {}, {'_id': false, 'mrn': true, 'name': true}, {name: 1})
     };
 
     this.singlePatient = function(mrn){
+        //return all info
+        return fetchData(patientsCol, { mrn: mrn }, {'_id': false}, {}, true)
+    };
 
-        return fetchPatients({ mrn: mrn }, {'_id': false}, {}, true)
+    //complaints
+    this.complaints = function(mrn=""){
+
+        if (mrn !== ""){
+            //TODO: return different request
+        }
+        return fetchData(complaintsCol, {}, {'_id': false}, {}, false)
+    };
+
+    //findings
+    this.allFindings = function(mrn=""){
+
+        if (mrn !== ""){
+            //TODO: return different request
+        }
+        return fetchData(findingsCol, {}, {'_id': false}, {}, false)
+    };
+
+    this.vitals = function(mrn=""){
+
+        let query = { category: "VITAL"};
+        if (mrn !== ""){
+            //TODO: return different request
+        }
+        return fetchData(findingsCol, query, {'_id': false}, {}, false)
+    };
+
+    this.labResults = function(mrn=""){
+
+        let query = { category: "LAB"};
+        if (mrn !== ""){
+            //TODO: return different request
+        }
+        return fetchData(findingsCol, query, {'_id': false}, {}, false)
+    };
+
+    this.problems = function(mrn=""){
+
+        let query = { category: "PROBLEM"};
+        if (mrn !== ""){
+            //TODO: return different request
+        }
+        return fetchData(findingsCol, query, {'_id': false}, {}, false)
     };
 };
 
 //private functions
-function fetchPatients(query, params, sort, single=false){
+function fetchData(collection, query, params, sort, single=false){
 
     return new Promise(function(resolve, reject) {
         mongoClient.connect(mongoUrl, function(err, db) {
@@ -34,7 +83,7 @@ function fetchPatients(query, params, sort, single=false){
                 return
             }
 
-            db.collection(patientsCol).find(query, params).sort(sort).toArray(function(err, result) {
+            db.collection(collection).find(query, params).sort(sort).toArray(function(err, result) {
                 if (err) {
                     reject(err);
                     db.close();

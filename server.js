@@ -26,6 +26,8 @@ let persistence = new DBPersistence(mongoClient, dbUrl);
 
 //Routes
 require('./server/routes/patients')(app, persistence);
+require('./server/routes/findings')(app, persistence);
+require('./server/routes/complaints')(app, persistence);
 
 //Functionality
 app.get('/', function (req, res) {

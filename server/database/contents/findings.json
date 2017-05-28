@@ -3,7 +3,7 @@
     "title": "Temperature",
     "value": "TEMP",
     "category": "VITAL",
-    "label": "F",
+    "label": "C",
     "type": "NUMBER",
     "options": []
   },
@@ -35,7 +35,7 @@
     "title": "Altered Location",
     "value": "ALTERED_LOC",
     "category": "VITAL",
-    "label": "%",
+    "label": "",
     "type": "BOOL",
     "options": []
   },
@@ -135,13 +135,45 @@
     "label": "",
     "type": "BOOL",
     "options": []
+  },
+  {
+    "title": "White Blood Cell Count",
+    "value": "WBC",
+    "category": "LAB",
+    "label": "c/mcL",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Potassium",
+    "value": "K",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Sodium",
+    "value": "NA",
+    "category": "LAB",
+    "label": "mEq/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Glucose",
+    "value": "GLUCOSE",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Creatinine",
+    "value": "CREATININE",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
   }
-
 ]
-
-
-        let options = [ {label: "White Blood Cell Count", value: "WBC", type: "Number"},
-                        {label: "Potassium", value: "K", type: "Number"},
-                        {label: "Sodium", value: "Na", type: "Number"},
-                        {label: "Glucose", value: "GLUCOSE", type: "Number"},
-                        {label: "Creatinine", value: "CREATININE", type: "Number"}];

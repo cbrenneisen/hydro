@@ -81,8 +81,9 @@ export default class FluidAction extends Component {
     }
     render() {
 
+        //TODO: add support for notes and going to the next screen
+
         let message = "No fluid needed. Reassess in 12 hrs";
-        let link = null;
         let type = "normal";
 
         if(this.state.burn){
@@ -108,7 +109,6 @@ export default class FluidAction extends Component {
         return (
             <div id="fluid-action" className="row widget">
                 <h4 className={type}>{message}</h4>
-                {link}
             </div>
         )
 

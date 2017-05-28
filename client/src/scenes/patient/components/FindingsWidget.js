@@ -17,26 +17,32 @@ export default class FindingsWidget extends Component {
         }
     }
     componentWillMount() {
-        //get data here
+        this.updateFindings(this.props.options, this.props.entries);
+    }
+    componentWillReceiveProps(nextProps){
+        this.updateFindings(nextProps.options, nextProps.entries);
+    }
+    updateFindings(propsOptions, propsEntries){
 
-        let entries = [];
-        if (this.props.entries !== undefined) {
-            this.props.entries.forEach(function (element) {
-                entries.push({id: ++id, question: element.question, answer: element.answer})
+        let selfEntries = [];
+        if (propsEntries !== undefined) {
+            propsEntries.forEach(function (element) {
+                selfEntries.push({id: ++id, question: element.question, answer: element.answer})
             });
         }
 
-        let options = [];
+        let selfOptions = [];
         let optID = 0;
-        if (this.props.options !== undefined) {
-            this.props.options.forEach(function (option) {
-                options.push({id: ++optID, label: option.label, value: option.value, type: option.type})
+        if (propsOptions !== undefined) {
+            propsOptions.forEach(function (option) {
+                selfOptions.push({id: ++optID, title: option.title, options: option.options,
+                                  label: option.label, value: option.value, type: option.type})
             });
         }
 
         this.setState ({
-            entries: entries,
-            options: options
+            entries: selfEntries,
+            options: selfOptions
         })
     }
     addFinding(){

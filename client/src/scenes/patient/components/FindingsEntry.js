@@ -13,6 +13,7 @@ export default class FindingsEntry extends Component {
             answer: this.props.answer,
             question: this.props.question,
             answerType: null,
+            label: "",
             options: []
         };
     }
@@ -34,22 +35,24 @@ export default class FindingsEntry extends Component {
     updateAnswerView(value, submit){
         //find the corresponding type
         let type = null;
+        let label = "";
         for (let i = 0; i< this.props.options.length; i++) {
-
             if (this.props.options[i].value === value) {
                 type = this.props.options[i].type;
+                label = this.props.options[i].label;
                 break
             }
         }
 
-        if (type === "Bool" && submit){
+        if (type === "BOOL" && submit){
             this.props.patient.update(value, "YES");
         }
 
         //update both the answer and the question
         this.setState ({
             answerType: type,
-            question: value
+            question: value,
+            label: label
         })
     }
     removeEntry(){
@@ -59,7 +62,7 @@ export default class FindingsEntry extends Component {
     render() {
 
         let answerView = null;
-        if (this.state.answerType === "Bool") {
+        if (this.state.answerType === "BOOL") {
 
             answerView =
                 <select className="form-control" onChange={this.updateAnswer.bind(this)} value={this.state.answer}>
@@ -73,17 +76,19 @@ export default class FindingsEntry extends Component {
 
         return (
             <li className="list-group-item">
-                <div className="left">
+                <div className="question">
                     <select className="form-control"
                             onChange={this.updateQuestion.bind(this)} value={this.state.question}>
                         {this.props.options.map((option) => {
-                            return <option key={option.id} value={option.value}>{option.label}</option>
+                            return <option key={option.id} value={option.value}>{option.title}</option>
                         })}
                     </select>
                 </div>
-                <div className="right">
-
+                <div className="answer">
                     {answerView}
+                </div>
+                <div className="label">
+                    <h6>{this.state.label}</h6>
                 </div>
                 <div className="trash">
                     <span className="glyphicon glyphicon glyphicon-trash"

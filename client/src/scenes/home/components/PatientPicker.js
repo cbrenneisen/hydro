@@ -18,8 +18,6 @@ export default class PatientPicker extends Component {
         }
     }
     componentWillMount(){
-        //TODO: use promises
-
         fetch("api/patients")
             .then(resp => resp.json())
             .then(resp => {

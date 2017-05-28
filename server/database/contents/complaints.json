@@ -1,0 +1,8 @@
+[
+  { "value": "ABPAIN", "title": "Abdominal Pain"},
+  { "value": "COUGH", "title": "Cough & Chest Pain"},
+  { "value": "HEADACHE", "title": "Headache"},
+  { "value": "SHOCK", "title": "Shock"},
+  { "value": "TRAUMATIC_BRAIN", "title": "Traumatic Brain Damage"},
+  { "value": "TRAUMATIC_RESUSCITATION", "title": "Traumatic Resuscitation"}
+]

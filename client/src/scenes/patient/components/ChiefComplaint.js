@@ -5,23 +5,32 @@
 import React, { Component } from 'react';
 import './style/ChiefComplaint.css';
 
+let id = 0;
 export default class FluidAction extends Component {
     constructor(props) {
         super(props);
 
-        let id = 0;
-        let options = [ {id: ++id, value: "NO",    label: "None"},
-                        {id: ++id, value: "ABPAIN", label: "Abdominal Pain"},
-                        {id: ++id, value: "COUGH", label: "Cough & Chest Pain"},
-                        {id: ++id, value: "HEADACHE", label: "Headache"},
-                        {id: ++id, value: "SHOCK", label: "Shock"},
-                        {id: ++id, value: "TRAUMATIC_BRAIN", label: "Traumatic Brain Damage"},
-                        {id: ++id, value: "TRAUMATIC_RESUSCITATION", label: "Traumatic Resuscitation"}];
-
         this.state = {
-            options: options,
-            question: this.props.question,
+            options: [],
+            question: this.props.patient.chief_complaint,
         };
+    }
+    componentWillMount(){
+        fetch("/api/complaints")
+            .then(resp => resp.json())
+            .then(resp => {
+                this.setOptions(resp);
+            });
+    }
+    setOptions(input){
+        let options = [{id: ++id, value: "NO", title: "None"}];
+        input.forEach(function (element) {
+            options.push({id: ++id, value: element.value, title: element.title})
+        });
+
+        this.setState({
+            options: options
+        });
     }
     updateQuestion(event)
     {
@@ -32,7 +41,6 @@ export default class FluidAction extends Component {
         };
 
         this.props.patient.update(event.target.value, "YES");
-
     }
     render(){
 
@@ -43,7 +51,7 @@ export default class FluidAction extends Component {
                 <select className="form-control"
                         onChange={this.updateQuestion.bind(this)} value={this.state.question}>
                     {this.state.options.map((entry) => {
-                        return <option key={entry.id} value={entry.value}>{entry.label}</option>
+                        return <option key={entry.id} value={entry.value}>{entry.title}</option>
                     })}
                 </select>
             </div>
