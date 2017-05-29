@@ -4,7 +4,6 @@
 
 import React, { Component } from 'react';
 import PatientRow from "./PatientRow";
-import 'whatwg-fetch';
 
 import './style/PatientPicker.css';
 
@@ -14,7 +13,8 @@ export default class PatientPicker extends Component {
         super(props);
 
         this.state = {
-            patients: [],
+            curPatients: [],
+            allPatients: []
         }
     }
     componentWillMount(){
@@ -22,7 +22,8 @@ export default class PatientPicker extends Component {
             .then(resp => resp.json())
             .then(resp => {
                 this.setState({
-                   patients: resp
+                   curPatients: resp,
+                   allPatients: resp
                 });
             });
     }
@@ -30,12 +31,12 @@ export default class PatientPicker extends Component {
         let keyword = event.target.value;
 
         //filter out of the original list of patients
-        let newPatients = this.props.patients.filter(function(patient){
+        let newPatients = this.state.allPatients.filter(function(patient){
             return patient.name.toLowerCase().includes(keyword.toLowerCase())
         });
 
         this.setState ({
-            patients: newPatients
+            curPatients: newPatients
         })
 
     }render() {
@@ -47,7 +48,7 @@ export default class PatientPicker extends Component {
                      aria-describedby="sizing-addon2" />
               <div id="patient-picker">
                   <ul className="list-group">
-                      {this.state.patients.map((patient) => {
+                      {this.state.curPatients.map((patient) => {
                         return <PatientRow patient={patient} key={patient.mrn}/>
                       })}
                   </ul>

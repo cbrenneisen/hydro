@@ -32,13 +32,12 @@ export default class FluidAction extends Component {
             options: options
         });
     }
-    updateQuestion(event)
-    {
+    updateQuestion(event) {
         this.props.patient.removeAnswer(this.state.question);
 
-        this.state = {
+        this.setState({
             question: event.target.value
-        };
+        });
 
         this.props.patient.update(event.target.value, "YES");
     }

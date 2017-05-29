@@ -129,6 +129,14 @@
     "options": []
   },
   {
+    "title": "Heart Failure",
+    "value": "HEART_FAILURE",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
     "title": "Spontaneous Bacterial Peritonitis",
     "value": "SBP",
     "category": "PROBLEM",
