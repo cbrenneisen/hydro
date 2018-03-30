@@ -9,17 +9,19 @@ export default class LabResults extends Component {
     constructor(props){
         super(props);
 
-        let options = [ {label: "White Blood Cell Count", value: "WBC", type: "Number"},
-                        {label: "Potassium", value: "K", type: "Number"},
-                        {label: "Sodium", value: "Na", type: "Number"},
-                        {label: "Glucose", value: "GLUCOSE", type: "Number"},
-                        {label: "Creatinine", value: "CREATININE", type: "Number"}];
-
-
         this.state = {
             entries: this.props.patient.lab_results,
-            options: options
+            options: []
         }
+    }
+    componentWillMount(){
+         fetch("/api/findings/lab")
+            .then(resp => resp.json())
+            .then(resp => {
+                this.setState({
+                   options: resp
+                });
+            });
     }
     render() {
         return (

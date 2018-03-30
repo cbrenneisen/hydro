@@ -1,9 +1,10 @@
 
-<img width="40px" src="/public/logo.png"> HydrO: A CDS to assist Fluid Resuscitation 
+<img width="40px" src="/client/public/logo.png"> HydrO: A CDS to assist Fluid Resuscitation 
 ======================================
 
 See it running <a href="https://cbrenneisen.github.io/hydro">right here</a>.
 
+(persistence not enabled - node branch in progress)
 
 ## What is this? 
 This is a web app that is used to aid healthcare professionals when dealing with patients who might need fluid resuscitation. 

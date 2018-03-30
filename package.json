@@ -1,30 +1,36 @@
 {
-  "name": "untitled",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://cbrenneisen.github.io/hydro",
+  "name": "hydro",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "server.js",
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1",
-    "rxjs": "^5.4.0",
-    "whatwg-fetch": "^2.0.3"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-mongo-sanitize": "^1.3.2",
+    "fs": "0.0.1-security",
+    "mongodb": "^2.2.27",
+    "multer": "^1.3.0"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "node-sass": "^4.5.2",
-    "npm-run-all": "^4.0.2",
-    "react-scripts": "1.0.0"
+    "concurrently": "^3.4.0"
   },
   "scripts": {
-    "deploy": "npm run build&&gh-pages -d build",
-    "build-css": "node-sass src/ -o src/",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "babel-node server.js",
+    "client": "babel-node client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbrenneisen/hydro.git"
+  },
+  "author": "cbrenneisen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbrenneisen/hydro/issues"
+  },
+  "homepage": "https://github.com/cbrenneisen/hydro#readme"
 }

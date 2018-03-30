@@ -3,31 +3,43 @@
  */
 
 import React, { Component } from 'react';
+import PatientRow from "./PatientRow";
 
 import './style/PatientPicker.css';
-import PatientRow from "./PatientRow";
+
 
 export default class PatientPicker extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            patients: this.props.patients,
+            curPatients: [],
+            allPatients: []
         }
+    }
+    componentWillMount(){
+        fetch("api/patients")
+            .then(resp => resp.json())
+            .then(resp => {
+                this.setState({
+                   curPatients: resp,
+                   allPatients: resp
+                });
+            });
     }
     search(event){
         let keyword = event.target.value;
 
         //filter out of the original list of patients
-        let newPatients = this.props.patients.filter(function(patient){
+        let newPatients = this.state.allPatients.filter(function(patient){
             return patient.name.toLowerCase().includes(keyword.toLowerCase())
         });
 
         this.setState ({
-            patients: newPatients
+            curPatients: newPatients
         })
-    }
-    render() {
+
+    }render() {
 
         return (
             <div id="patient-picker-wrapper">
@@ -36,7 +48,7 @@ export default class PatientPicker extends Component {
                      aria-describedby="sizing-addon2" />
               <div id="patient-picker">
                   <ul className="list-group">
-                      {this.state.patients.map((patient) => {
+                      {this.state.curPatients.map((patient) => {
                         return <PatientRow patient={patient} key={patient.mrn}/>
                       })}
                   </ul>

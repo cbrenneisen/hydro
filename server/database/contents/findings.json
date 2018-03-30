@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Temperature",
+    "value": "TEMP",
+    "category": "VITAL",
+    "label": "C",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Respiratory Rate",
+    "value": "RESP_RATE",
+    "category": "VITAL",
+    "label": "BPM",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Pulse",
+    "value": "PULSE",
+    "category": "VITAL",
+    "label": "BPM",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Pulse Ox",
+    "value": "PULSE_OX",
+    "category": "VITAL",
+    "label": "%",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Altered Location",
+    "value": "ALTERED_LOC",
+    "category": "VITAL",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Systolic Blood Pressure",
+    "value": "SBP",
+    "category": "VITAL",
+    "label": "mmHg",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Diastolic Blood Pressure",
+    "value": "DBP",
+    "category": "VITAL",
+    "label": "mmHg",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Capillary Refill",
+    "value": "CAPILLARY_REFILL",
+    "category": "VITAL",
+    "label": "",
+    "type": "MULTIPLE",
+    "options": [{"label": "Normal", "value": "NORMAL"},
+                {"label": "Prolonged", "value": "PROLONGED"}]
+  },
+  {
+    "title": "Urine Output",
+    "value": "URINE_OUTPUT",
+    "category": "VITAL",
+    "label": "mL/hour",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Oxygen Required",
+    "value": "O2_REQUIREMENT",
+    "category": "VITAL",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Nothing By Mouth",
+    "value": "NPO",
+    "category": "VITAL",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Renal/Hepatic Insufficiencies",
+    "value": "RHI",
+    "category": "VITAL",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Urinary Tract Infection",
+    "value": "UTI",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Bipolar Disorder",
+    "value": "BIPOLAR",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "HyperTension",
+    "value": "HYPERTENSION",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Diabetes Type II",
+    "value": "DIABETESII",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Heart Failure",
+    "value": "HEART_FAILURE",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "Spontaneous Bacterial Peritonitis",
+    "value": "SBP",
+    "category": "PROBLEM",
+    "label": "",
+    "type": "BOOL",
+    "options": []
+  },
+  {
+    "title": "White Blood Cell Count",
+    "value": "WBC",
+    "category": "LAB",
+    "label": "c/mcL",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Potassium",
+    "value": "K",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Sodium",
+    "value": "NA",
+    "category": "LAB",
+    "label": "mEq/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Glucose",
+    "value": "GLUCOSE",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
+  },
+  {
+    "title": "Creatinine",
+    "value": "CREATININE",
+    "category": "LAB",
+    "label": "mmol/L",
+    "type": "NUMBER",
+    "options": []
+  }
+]

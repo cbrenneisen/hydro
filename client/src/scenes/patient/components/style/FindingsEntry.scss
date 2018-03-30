@@ -8,17 +8,26 @@
     display: inline-block;
     width: 100%;
 
-    .left{
+    .question {
       width: 50%;
       float: left;
     }
 
-    .right {
-      width: 30%;
+    .answer {
+      width: 25%;
       float: left;
       padding-left: 15px;
     }
 
+    .label {
+      width: 5%;
+      float: left;
+      padding-left: 5px;
+
+      h6{
+        color: #1f1f1f;
+      }
+    }
     .trash {
       width: 10%;
       float: right;

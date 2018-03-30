@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Beverly Hazzard",
+    "mrn": "2009527",
+    "chief_complaint": "HEADACHE",
+    "ehr": {
+      "dob": "01/15/1990", "gender": "F", "weight": "192", "height": "165", "age": "27"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "37"},
+          {"question": "SBP", "answer": "110"},
+          {"question": "DBP", "answer": "74"},
+          {"question": "RESP_RATE", "answer": "35"},
+          {"question": "PULSE", "answer": "98"},
+          {"question": "CAPILLARY_REFILL", "answer": "NORMAL"},
+          {"question": "URINE_OUTPUT", "answer": "75"},
+          {"question": "ALTERED_LOC", "answer": "NO"}
+      ],
+      "lab_results": [
+        {"question": "WBC", "answer": "12.5"}
+      ],
+      "problems": [
+        {"question": "UTI", "answer": "YES"},
+        {"question": "BIPOLAR", "answer": "YES"},
+        {"question": "HYPERTENSION", "answer": "NO"}
+      ]
+    }
+  },
+  {
+    "name": "Mary Hernandez",
+    "mrn": "2009528",
+    "chief_complaint": "",
+    "ehr": {
+      "dob": "05/10/1939", "gender": "F", "weight": "165", "height": "160", "age": "78"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "38"},
+          {"question": "SBP", "answer": "86"},
+          {"question": "DBP", "answer": "48"},
+          {"question": "RESP_RATE", "answer": "20"},
+          {"question": "PULSE", "answer": "115"},
+          {"question": "PULSE_OX", "answer": "91"},
+          {"question": "NPO", "answer": "NO"},
+          {"question": "ALTERED_LOC", "answer": "YES"}
+      ],
+      "lab_results": [],
+      "problems": [
+        {"question": "DIABETESII", "answer": "YES"},
+        {"question": "HYPERTENSION", "answer": "YES"}
+      ]
+    }
+  },
+  {
+    "name": "Susan Shade",
+    "mrn": "2009529",
+    "chief_complaint": "",
+    "ehr": {
+      "dob": "06/11/1973", "gender": "F", "weight": "110", "height": "158", "age": "43"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "37"},
+          {"question": "SBP", "answer": "105"},
+          {"question": "DBP", "answer": "70"},
+          {"question": "RESP_RATE", "answer": "25"},
+          {"question": "NPO", "answer": "NO"},
+          {"question": "ALTERED_LOC", "answer": "NO"}
+      ],
+      "lab_results": [
+        {"question": "K", "answer": "3.3"},
+        {"question": "Na", "answer": "125"}
+      ],
+      "problems": []
+    }
+  },
+  {
+    "name": "Mitchell Matthews",
+    "mrn": "2009530",
+    "chief_complaint": "COUGH",
+    "ehr": {
+      "dob": "10/22/1955", "gender": "M", "weight": "187", "height": "172", "age": "61"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "38"},
+          {"question": "SBP", "answer": "125"},
+          {"question": "DBP", "answer": "87"},
+          {"question": "RESP_RATE", "answer": "30"},
+          {"question": "PULSE", "answer": "95"},
+          {"question": "NPO", "answer": "YES"},
+          {"question": "ALTERED_LOC", "answer": "NO"}
+      ],
+      "lab_results": [
+        {"question": "GLUCOSE", "answer": "245"}
+      ],
+      "problems": [
+        {"question": "DIABETESII", "answer": "YES"},
+        {"question": "HYPERTENSION", "answer": "YES"}
+      ]
+    }
+  },
+  {
+    "name": "Angela Williams",
+    "mrn": "2009531",
+    "chief_complaint": "HEADACHE",
+    "ehr": {
+      "dob": "08/05/1949", "gender": "F", "weight": "99", "height": "160", "age": "67"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "37"},
+          {"question": "SBP", "answer": "110"},
+          {"question": "DBP", "answer": "65"},
+          {"question": "RESP_RATE", "answer": "24"},
+          {"question": "PULSE", "answer": "120"},
+          {"question": "NPO", "answer": "YES"},
+          {"question": "O2_REQUIREMENT", "answer": "YES"},
+          {"question": "ALTERED_LOC", "answer": "YES"}
+      ],
+      "lab_results": [],
+      "problems": [
+        {"question": "HEART_FAILURE", "answer": "YES"}
+      ]
+    }
+  },
+  {
+    "name": "James Gorham",
+    "mrn": "2009532",
+    "chief_complaint": "HEADACHE",
+    "ehr": {
+      "dob": "10/05/1955", "gender": "M", "weight": "160", "height": "165", "age": "61"
+    },
+    "findings": {
+      "vitals": [
+          {"question": "TEMP", "answer": "37"},
+          {"question": "SBP", "answer": "110"},
+          {"question": "DBP", "answer": "65"},
+          {"question": "PULSE", "answer": "120"},
+          {"question": "RESP_RATE", "answer": "24"},
+          {"question": "NPO", "answer": "YES"},
+          {"question": "O2_REQUIREMENT", "answer": "YES"},
+          {"question": "ALTERED_LOC", "answer": "YES"}
+      ],
+      "lab_results": [
+        {"question": "CREATININE", "answer": "2.3"}
+      ],
+      "problems": [
+        {"question": "HEART_FAILURE", "answer": "NO"}
+      ]
+    }
+  }
+]

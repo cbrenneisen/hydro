@@ -8,17 +8,19 @@ import Rx from 'rxjs/Rx'
 
 export default class Patient {
 
-    mrn = 0;
     score = new Rx.BehaviorSubject(0);
 
+	mrn = "";
+	name = "";
+
+    //ehr
     gender = null;
 	weight = null;
 	height = null;
 	birthdate = null;
 	age = null;
 
-	mrn = "";
-	name = "";
+	chief_complaint = null;
 
 	burn = new Rx.BehaviorSubject(false);
     traumatic_brain = new Rx.BehaviorSubject(false);
@@ -44,9 +46,33 @@ export default class Patient {
     vitals = [];
     lab_results = [];
 
-    constructor(mrn){
-        this.mrn = mrn;
+    configure(json){
+
+        this.name = json.name;
+        this.mrn = json.mrn;
+        this.chief_complaint = json.chief_complaint;
+
+        this.gender = json.ehr.gender;
+        this.weight = json.ehr.weight;
+        this.height = json.ehr.height;
+        this.birthdate = json.ehr.dob;
+        this.age = json.ehr.age;
+
+        this.vitals = json.findings.vitals;
+        this.lab_results = json.findings.lab_results;
+        this.problems = json.findings.problems;
+
+        for (let i = 0; i < this.vitals.length; i ++ ){
+            this.resolve(this.vitals[i].question, this.vitals[i].answer);
+        }
+        for (let i = 0; i < this.lab_results.length; i ++ ){
+            this.resolve(this.lab_results[i].question, this.lab_results[i].answer);
+        }
+        for (let i = 0; i < this.problems.length; i ++ ){
+            this.resolve(this.problems[i].question, this.problems[i].answer);
+        }
     }
+
     setup(){
 
         let info = PatientService.patient_info(this.mrn).ehr;
