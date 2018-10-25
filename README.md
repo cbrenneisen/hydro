@@ -54,7 +54,7 @@ There's SASS for the styling (converted to CSS on run). Every component gets the
 And lastly, RxJS for alerting the appropriate components when there's new data to be used. 
 Changes to the patient score are retrieved from the FluidAction component using RxJS. The score is changed, and the component updates its state, causing a re-render to display the right message. MobX or Redux would have been a viable solution as well, but for a smaller app, the sequence pattern of Rx was more appropriate. 
 
-There is currently no database persistence, but it is slowly being worked on.
+Persistence utilizes Node.js/Express - currently there is only read functionality (no updates will be saved). 
 
 ## Setup
 
